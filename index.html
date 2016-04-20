@@ -9,6 +9,7 @@
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="server.js"></script>
     <script type="text/javascript">
       var socketio = io.connect('https://shielded-fortress-12118.herokuapp.com/');
       
@@ -19,7 +20,7 @@
           '<div class="message">' + messages[i].message + ' &mdash; ' + messages[i].name + '<span> ' + messages[i].date + '</span></div>';
         }
       });
-      
+
       // server -> client
       socketio.on('message_to_client', function(data){
           document.getElementById('chat-window').innerHTML +=
