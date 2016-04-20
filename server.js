@@ -28,12 +28,6 @@ io.sockets.on('connect', function(socket){
 	// someone connected, and that someone is called socket
     console.log('Someone connected to the server.');
 
-    // send missed messages to the client
-    for (i=0; i<messages.length; i++){
-    	document.getElementById('chat-window').innerHTML +=
-    	'<div class="message">' + messages[i].message + ' &mdash; ' + messages[i].name + '<span> ' + messages[i].date + '</span></div>';
-    }
-
     socket.on('message_to_server', function(data){
 		io.sockets.emit('message_to_client', {
 			message: data.message,

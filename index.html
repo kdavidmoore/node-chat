@@ -2,8 +2,7 @@
 <html>
   <head>
     <title>Chat Room</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <style type="text/css">
       span { color: #707E81; }
@@ -12,7 +11,15 @@
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script type="text/javascript">
       var socketio = io.connect('https://shielded-fortress-12118.herokuapp.com/');
-
+      
+      socketio.on('connect', function(){
+      // send missed messages to the client
+        for (i=0; i<messages.length; i++){
+          document.getElementById('chat-window').innerHTML +=
+          '<div class="message">' + messages[i].message + ' &mdash; ' + messages[i].name + '<span> ' + messages[i].date + '</span></div>';
+        }
+      });
+      
       // server -> client
       socketio.on('message_to_client', function(data){
           document.getElementById('chat-window').innerHTML +=
