@@ -13,7 +13,7 @@ var server = http.createServer(function(request, response) {
     })
 });
 
-server.listen(PORT, function(){
+server.listen(port, function(){
 	console.log('Listening on port ' + port + "...");
 });
 
