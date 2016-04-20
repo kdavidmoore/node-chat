@@ -5,24 +5,12 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <style type="text/css">
-      span {
-        color: #707E81;
-      }
+      span { color: #707E81; }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script type="text/javascript">
-      var socketio = io.connect('127.0.0.1:' + port);
-
-      // console.log(socketio);
-      // socketio is the thing that is connected to 127.0.0.1:[port number]
-      /* somehow load messages array from server.js
-      socketio.on('connect', function(socket){
-        for (i in messages){
-          document.getElementById('chat-window').innerHTML =
-          '<div class="message">' + i.message + ' &mdash; ' + i.name + '<span> ' + i.date + '</span></div>';
-        }
-      }); */
+      var socketio = io.connect('https://shielded-fortress-12118.herokuapp.com/');
 
       // server -> client
       socketio.on('message_to_client', function(data){
