@@ -9,16 +9,16 @@
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-    <script type="text/javascript" src="server.js"></script>
     <script type="text/javascript">
       var socketio = io.connect('https://shielded-fortress-12118.herokuapp.com/');
       
-      socketio.on('connect', function(){
-      // send missed messages to the client
-        for (i=0; i<messages.length; i++){
+      socketio.on('connect', function(data){
+        console.log(data);
+        // send missed messages to the client
+        /*for (i=0; i<data.length; i++){
           document.getElementById('chat-window').innerHTML +=
-          '<div class="message">' + messages[i].message + ' &mdash; ' + messages[i].name + '<span> ' + messages[i].date + '</span></div>';
-        }
+          '<div class="message">' + data[i].message + ' &mdash; ' + data[i].name + '<span> ' + data[i].date + '</span></div>';
+        } */
       });
 
       // server -> client

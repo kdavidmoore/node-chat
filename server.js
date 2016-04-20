@@ -1,6 +1,6 @@
 var http = require('http');
 var fs = require('fs');
-var port = process.env.PORT || 8000;
+var port = process.env.PORT || '8000';
 var messages = [];
 //var numUsers = 0;
 
