@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Chat Room</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <style type="text/css">
       span { color: #707E81; }
@@ -55,12 +57,14 @@
       <form class="col s12" onsubmit="sendMessage()">
         <div class="row">
           <div class="input-field col s12 m6">
+            <i class="material-icons prefix">account_circle</i>
             <input id="name" type="text">
             <label for="name">Name</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12 m8">
+            <i class="material-icons prefix">mode_edit</i>
             <input id="message" type="text">
             <label for="message">Message</label>
           </div>
