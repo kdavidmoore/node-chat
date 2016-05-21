@@ -1,6 +1,6 @@
-# Node.js Chat Room
+# Node Chat
 
-A simple chat client built using Node.js
+A basic chat app built using Node.js and socket.io.
 
 ## Features
 * Each new tab or window that points to the same URL opens a new client
